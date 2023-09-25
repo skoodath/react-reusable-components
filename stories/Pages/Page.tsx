@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./page.css";
-import { Header } from "../Molecules/Header";
+import Header from "../Molecules/Header/Header";
 
 type User = {
   name: string;

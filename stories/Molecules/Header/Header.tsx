@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./header.css";
-import Button from "../Atoms/Button/Button";
+import Button from "../../Atoms/Button/Button";
 
 type User = {
   name: string;
@@ -14,12 +14,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
   <header>
     <div className="storybook-header">
       <div>
@@ -55,30 +50,35 @@ export const Header = ({
             <Button
               size="small"
               onClick={onLogout}
-              label="Log out"
               type="button"
               variant="contained"
-            />
+            >
+              Logout
+            </Button>
           </>
         ) : (
           <>
             <Button
               size="small"
               onClick={onLogin}
-              label="Log in"
               type="button"
               variant="contained"
-            />
+            >
+              Log in
+            </Button>
             <Button
               type="button"
               size="small"
               onClick={onCreateAccount}
-              label="Sign up"
               variant="outlined"
-            />
+            >
+              Sign up
+            </Button>
           </>
         )}
       </div>
     </div>
   </header>
 );
+
+export default Header;

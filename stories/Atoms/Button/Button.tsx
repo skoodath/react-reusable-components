@@ -1,7 +1,8 @@
 import React from "react";
-import { StyledButton } from "./Button.styles";
+import { ButtonProps as MuiButtonProps } from "@mui/material";
+import { MuiButton } from "./Button.styles";
 
-interface ButtonProps {
+export interface ButtonProps extends MuiButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -13,40 +14,50 @@ interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | undefined;
   /**
-   * Button contents
+   * button shape
    */
-  label: string;
+  edge?:
+    | "square"
+    | "round-sm"
+    | "round-md"
+    | "round-lg"
+    | "round-full"
+    | undefined;
   /**
    * Optional click handler
    */
   onClick?: () => void;
 
-  type: string;
+  type: "button" | "submit" | "reset" | undefined;
+
+  children: React.ReactNode;
 }
 
 /**
  * Primary UI component for user interaction
  */
-const ButtonComponent = ({
+const Button = ({
+  children,
   variant,
   size = "large",
+  edge,
   backgroundColor,
-  label,
   type,
   ...props
 }: ButtonProps) => {
   return (
-    <StyledButton
-      size={size}
+    <MuiButton
       bgColor={backgroundColor}
+      edge={edge}
+      size={size}
       variant={variant}
       {...props}
     >
-      {label}
-    </StyledButton>
+      {children}
+    </MuiButton>
   );
 };
 
-export default ButtonComponent;
+export default Button;
