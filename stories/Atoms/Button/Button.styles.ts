@@ -8,7 +8,6 @@ type Props = {
 export const StyledButton = styled(Button, {
   shouldForwardProp: (props) => props !== ("bgColor" && "size"),
 })<Props>(({ theme, bgColor, size }) => ({
-  backgroundColor: bgColor || theme.palette.primary.main,
   fontSize:
     size === "small"
       ? theme.typography.body2.fontSize

@@ -1,6 +1,19 @@
 import type { Preview } from "@storybook/react";
 import myTheme from "../theme";
+import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { ThemeProvider, CssBaseline } from "@mui/material";
+
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/material-icons";
+
+/* TODO: update import for your custom Material UI themes */
+// import { lightTheme, darkTheme } from '../path/to/themes';
+
+// Import your fontface CSS files here
+// Don't have any? We recommend installing and using @fontsource/roboto
 
 export const preview: Preview = {
   parameters: {
@@ -28,10 +41,12 @@ export const preview: Preview = {
 };
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider theme={myTheme}>
-      <CssBaseline />
-      <Story />
-    </ThemeProvider>
-  ),
+  withThemeFromJSXProvider({
+    themes: {
+      light: myTheme,
+    },
+    defaultTheme: "light",
+    Provider: ThemeProvider,
+    GlobalStyles: CssBaseline,
+  }),
 ];

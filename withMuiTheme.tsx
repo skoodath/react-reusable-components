@@ -1,16 +1,15 @@
-import { ThemeProvider, CssBaseline } from "@mui/material";
+import { ThemeProvider, CssBaseline, ThemeOptions } from "@mui/material";
 import React, { FunctionComponent } from "react";
 import { StoryProps } from "@storybook/addon-docs";
 import myTheme from "./theme";
 
-const withMuiTheme = (
-  Story: FunctionComponent<StoryProps>,
-  context: React.JSX.IntrinsicAttributes & StoryProps
-) => (
-  <ThemeProvider theme={myTheme}>
-    <CssBaseline />
-    <Story {...context} />
-  </ThemeProvider>
-);
+const withMuiTheme =
+  // eslint-disable-next-line react/display-name
+  (Story: FunctionComponent<StoryProps>) => (
+    <ThemeProvider theme={myTheme}>
+      <CssBaseline />
+      <Story />
+    </ThemeProvider>
+  );
 
 export default withMuiTheme;

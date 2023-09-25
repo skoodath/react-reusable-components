@@ -31,8 +31,9 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    ...Primary.args,
     variant: "outlined",
+    label: "Button",
+    type: "button",
   },
 };
 export const Text: Story = {
