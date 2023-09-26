@@ -5,6 +5,9 @@ const meta = {
   title: "Molecules/Multi Step Form",
   component: MultiStepForm,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
   args: {},
 } satisfies Meta<typeof MultiStepForm>;
 

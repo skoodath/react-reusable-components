@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Button, { ButtonProps } from "../../Atoms/Button/Button";
-import { Grid, useMediaQuery } from "@mui/material";
-import { useTheme } from "@emotion/react";
+import { Grid } from "@mui/material";
+import Button, { ButtonProps } from "@/stories/Atoms/Button/Button";
 
 export type Buttons = {
   caption: string;

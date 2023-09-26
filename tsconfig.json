@@ -16,13 +16,16 @@
     "incremental": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/Atoms/*": ["Atoms/*"],
+      "@/Molecules/*": ["Molecules/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
