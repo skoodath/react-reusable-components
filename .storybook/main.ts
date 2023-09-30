@@ -16,7 +16,10 @@ const config: StorybookConfig = {
     "@storybook/addon-controls",
     "@storybook/addon-storysource",
     "@storybook/addon-toolbars",
-    "@storybook/addon-styling",
+    {
+      name: "@storybook/addon-styling",
+      options: {},
+    },
   ],
   framework: {
     name: "@storybook/nextjs",

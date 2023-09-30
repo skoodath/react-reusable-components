@@ -46,7 +46,7 @@ export const decorators = [
     themes: {
       light: myTheme,
     },
-    defaultTheme: "light",
+    defaultTheme: "dark",
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
   }),
